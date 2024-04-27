@@ -1,11 +1,10 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -16,8 +15,7 @@ body {
 }
 
 .container {
-    width: 60%;
-    box-shadow: 1px 1px 5px 1px #e1e1e1;
+    width: 90%;
     padding: 1rem;
 }
 
@@ -28,11 +26,12 @@ body {
 .addtarefa {
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
 .img {
-    width: 55%;
+    width: 80%;
 }
 
 img {
@@ -40,19 +39,28 @@ img {
 }
 
 form {
-    width: 45%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     margin: .75rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 1024px) {
+    .container {
+        width: 60%;
+        box-shadow: 1px 1px 5px 1px #e1e1e1;
+    }
+
+    .addtarefa {
+        flex-direction: row;
+    }
+
     .img {
-        display: none;
+        width: 50%;
     }
 
     form {
-        width: 90%;
+        width: 50%;
     }
 }
 
@@ -85,6 +93,10 @@ input:focus-visible, textarea:focus-visible {
     outline: 1px solid #dbdbdb;
 }
 
+input:hover, textarea:hover {
+    background-color: #ebebeb;
+}
+
 button {
     border: none;
     padding: .5rem .5rem;
@@ -103,13 +115,15 @@ button:hover {
 table {
     width: 100%;
     text-align: center;
+    border-collapse: collapse;
+    font-size: .9em;
 }
 
 table th {
     background-color: #9296ab;
     color: #fff;
-    border-radius: .5em;
-    gap: 1em;
+    border-radius: .75em;
+    border: 2px solid #fff;
 }
         
 table th, table td {
@@ -122,11 +136,9 @@ table th, table td {
 table td {
     border-right: 1px solid #9296ab;
     border-bottom: 1px solid #9296ab;
-    border-collapse: collapse;
 }
 
 table td:last-child {
     border: none;
     border-bottom: 1px solid #9296ab;
-    border-collapse: collapse;
 }
