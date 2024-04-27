@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <form action="" id="gerenciador">
+            <h1>Lista de tarefas</h1>
+            <label for="titulo">Título</label>
+            <input type="text" name="titulo" id="titulo">
+            <label for="descricao">Descrição</label>
+            <textarea name="descricao" id="descricao" cols="30" rows="5"></textarea>
+            <button id="addbtn" type="button">Adicionar</button>
+        </form>
+        <table id="tarefas">
+            <tr>
+                <th>Título</th>
+                <th>Descrição</th>
+                <th>Ação</th>
+            </tr>
+        </table>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
