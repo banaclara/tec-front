@@ -17,6 +17,7 @@ body {
 .container {
     width: 90%;
     padding: 1rem;
+    margin-bottom: 1rem;
 }
 
 .tabela {
@@ -38,11 +39,25 @@ img {
     width: 100%;
 }
 
-form {
+.box {
     width: 100%;
+    margin: .75rem;
+}
+
+form {
     display: flex;
     flex-direction: column;
-    margin: .75rem;
+    animation: fadeIn .75s forwards;
+}
+
+.msg {
+    display: none;
+    animation: fadeIn .75s forwards;
+}
+
+.msg button {
+    margin-top: 1rem;
+    width: 100%;
 }
 
 @media screen and (min-width: 1024px) {
@@ -59,8 +74,17 @@ form {
         width: 50%;
     }
 
-    form {
+    .box {
         width: 50%;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
 

@@ -1,21 +1,43 @@
-var addBtn = document.getElementById("addbtn");
-var tabela = document.getElementById("tarefas");
-var tituloCol = document.getElementById("titulo");
-var descCol = document.getElementById("descricao");
+var addBtn = document.getElementById('addbtn');
+var tabela = document.getElementById('tarefas');
 
 addBtn.addEventListener("click", () => {
-    let novaLinha = document.createElement("tr");
-    let novoTitulo = document.createElement("td");
-    let novaDesc = document.createElement("td");
-    let espacoBtn = document.createElement("td");
-    let delBtn = document.createElement("button");
-    novoTitulo.textContent = document.getElementById("titulo").value;
-    novaDesc.textContent = document.getElementById("descricao").value;
-    delBtn.textContent = "Excluir";
+    let tituloData = document.getElementById('titulo').value;
+    let descData = document.getElementById('descricao').value;
+    if (tituloData != '' && descData != '') {
+        criarLinha(tituloData, descData);
+    } else {
+        exibirMensagem();
+    }
+});
+
+function criarLinha(t, d) {
+    let novaLinha = document.createElement('tr');
+    let novoTitulo = document.createElement('td');
+    let novaDesc = document.createElement('td');
+    let espacoBtn = document.createElement('td');
+    let delBtn = document.createElement('button');
+    novoTitulo.textContent = t;
+    novaDesc.textContent = d;
+    delBtn.textContent = 'Excluir';
     tabela.appendChild(novaLinha);
     novaLinha.appendChild(novoTitulo);
     novaLinha.appendChild(novaDesc);
     novaLinha.appendChild(espacoBtn);
     espacoBtn.appendChild(delBtn);
-    delBtn.onclick = () => {novaLinha.parentNode.removeChild(novaLinha)};
-});
+    delBtn.onclick = () => {
+        novaLinha.parentNode.removeChild(novaLinha);
+    }
+}
+
+function exibirMensagem() {
+    let form = document.getElementById('gerenciador');
+    let mensagem = document.querySelector('.msg');
+    let voltarBtn = document.getElementById('voltarbtn');
+    form.style.display = 'none';
+    mensagem.style.display = 'block';
+    voltarBtn.onclick = () => {
+        mensagem.style.display = 'none';
+        form.style.display = 'flex';
+    }
+}

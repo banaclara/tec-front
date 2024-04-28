@@ -10,14 +10,21 @@
     <div class="container">
         <div class="addtarefa">
             <div class="img"><img src="assets/image/undraw_add_tasks_re_s5yj.svg" alt="add Tarefa"></div>
-            <form action="" id="gerenciador">
-                <h1>Lista de tarefas</h1>
-                <label for="titulo">Título</label>
-                <input type="text" name="titulo" id="titulo">
-                <label for="descricao">Descrição</label>
-                <textarea name="descricao" id="descricao" cols="30" rows="5"></textarea>
-                <button id="addbtn" type="button">Adicionar</button>
-            </form>
+            <div class="box">
+                <form action="" id="gerenciador">
+                    <h1>Lista de tarefas</h1>
+                    <label for="titulo">Título</label>
+                    <input type="text" name="titulo" id="titulo">
+                    <label for="descricao">Descrição</label>
+                    <textarea name="descricao" id="descricao" cols="30" rows="5"></textarea>
+                    <button id="addbtn" type="button">Adicionar</button>
+                </form>
+                <div class="msg">
+                    <h2>Por favor,</h2>
+                    <p>preencha os campos de título e descrição.</p>
+                    <button id="voltarbtn" type="button">Voltar</button>
+                </div>
+            </div>
         </div>
         <div class="tabela">
             <table id="tarefas">
