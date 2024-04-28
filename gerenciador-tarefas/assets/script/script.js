@@ -34,10 +34,19 @@ function exibirMensagem() {
     let form = document.getElementById('gerenciador');
     let mensagem = document.querySelector('.msg');
     let voltarBtn = document.getElementById('voltarbtn');
-    form.style.display = 'none';
-    mensagem.style.display = 'block';
+    form.setAttribute('fading', '');
+    form.addEventListener('animationend', () => {
+        form.removeAttribute('fading');
+        form.style.display = 'none';
+        mensagem.style.display = 'block';
+    }, {once: true});
     voltarBtn.onclick = () => {
-        mensagem.style.display = 'none';
-        form.style.display = 'flex';
+        mensagem.setAttribute('fading', '');
+        mensagem.addEventListener('animationend', () => {
+            mensagem.removeAttribute('fading');
+            mensagem.style.display = 'none';
+            form.style.display = 'flex';
+        }, {once: true});
     }
 }
+

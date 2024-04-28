@@ -60,6 +60,32 @@ form {
     width: 100%;
 }
 
+.msg[fading] {
+    animation: fadeOut .25s forwards;
+}
+
+form[fading] {
+    animation: fadeOut .25s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+    }
+    0% {
+        opacity: 1;
+    }
+}
+
 @media screen and (min-width: 1024px) {
     .container {
         width: 60%;
@@ -76,15 +102,6 @@ form {
 
     .box {
         width: 50%;
-    }
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
     }
 }
 
@@ -160,9 +177,19 @@ table th, table td {
 table td {
     border-right: 1px solid #9296ab;
     border-bottom: 1px solid #9296ab;
+    animation: showLine .5s forwards;
 }
 
 table td:last-child {
     border: none;
     border-bottom: 1px solid #9296ab;
+}
+
+@keyframes showLine {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
 }
