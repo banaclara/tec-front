@@ -185,6 +185,10 @@ table td:last-child {
     border-bottom: 1px solid #9296ab;
 }
 
+table button {
+    margin: .25em 1em;
+}
+
 @keyframes showLine {
     0% {
         transform: translateY(-100%);

@@ -17,16 +17,30 @@ function criarLinha(t, d) {
     let novaDesc = document.createElement('td');
     let espacoBtn = document.createElement('td');
     let delBtn = document.createElement('button');
+    let checkBtn = document.createElement('button');
     novoTitulo.textContent = t;
     novaDesc.textContent = d;
     delBtn.textContent = 'Excluir';
+    checkBtn.textContent = 'Em andamento';
     tabela.appendChild(novaLinha);
     novaLinha.appendChild(novoTitulo);
     novaLinha.appendChild(novaDesc);
     novaLinha.appendChild(espacoBtn);
+    espacoBtn.appendChild(checkBtn);
     espacoBtn.appendChild(delBtn);
     delBtn.onclick = () => {
-        novaLinha.parentNode.removeChild(novaLinha);
+        tabela.removeChild(novaLinha);
+    }
+    checkBtn.onclick = () => {
+        if (checkBtn.textContent == 'Em andamento') {
+            novoTitulo.style.textDecoration = 'line-through';
+            novaDesc.style.textDecoration = 'line-through';
+            checkBtn.textContent = 'Concluída';
+        } else {
+            novoTitulo.style.textDecoration = 'none';
+            novaDesc.style.textDecoration = 'none';
+            checkBtn.textContent = 'Em andamento';
+        }
     }
 }
 
