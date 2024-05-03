@@ -1,7 +1,7 @@
-var addBtn = document.getElementById('addbtn');
-var tabela = document.getElementById('tarefas');
+const addBtn = document.getElementById('addbtn');
+const tBody = document.querySelector('tbody');
 
-addBtn.addEventListener("click", () => {
+addBtn.addEventListener('click', () => {
     let tituloData = document.getElementById('titulo').value;
     let descData = document.getElementById('descricao').value;
     if (tituloData != '' && descData != '') {
@@ -22,14 +22,14 @@ function criarLinha(t, d) {
     novaDesc.textContent = d;
     delBtn.textContent = 'Excluir';
     checkBtn.textContent = 'Em andamento';
-    tabela.appendChild(novaLinha);
+    tBody.appendChild(novaLinha);
     novaLinha.appendChild(novoTitulo);
     novaLinha.appendChild(novaDesc);
     novaLinha.appendChild(espacoBtn);
     espacoBtn.appendChild(checkBtn);
     espacoBtn.appendChild(delBtn);
     delBtn.onclick = () => {
-        tabela.removeChild(novaLinha);
+        tBody.removeChild(novaLinha);
     }
     checkBtn.onclick = () => {
         if (checkBtn.textContent == 'Em andamento') {
@@ -45,9 +45,9 @@ function criarLinha(t, d) {
 }
 
 function exibirMensagem() {
-    let form = document.getElementById('gerenciador');
-    let mensagem = document.querySelector('.msg');
-    let voltarBtn = document.getElementById('voltarbtn');
+    const form = document.getElementById('gerenciador');
+    const mensagem = document.querySelector('.msg');
+    const voltarBtn = document.getElementById('voltarbtn');
     form.setAttribute('fading', '');
     form.addEventListener('animationend', () => {
         form.removeAttribute('fading');

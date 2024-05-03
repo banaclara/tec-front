@@ -9,15 +9,19 @@
 
 body {
     width: 100%;
+    margin-top: 4rem;
+}
+
+main {
     display: flex;
-    justify-content: center;
-    margin-top: 5rem;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container {
     width: 90%;
     padding: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .tabela {
@@ -89,7 +93,7 @@ form[fading] {
 @media screen and (min-width: 1024px) {
     .container {
         width: 60%;
-        box-shadow: 1px 1px 5px 1px #e1e1e1;
+        box-shadow: 1px 1px 5px 1px #d8caba;
     }
 
     .addtarefa {
@@ -105,22 +109,17 @@ form[fading] {
     }
 }
 
-form h1 {
-    margin-bottom: 1rem;
-    font-size: 1.25em;
-    text-align: center;
-}
-
 form label {
     font-weight: bold;
     margin-bottom: .5rem;
     text-transform: uppercase;
     font-size: .75em;
+    color: #803300;
 }
 
 form input, textarea {
     border: none;
-    box-shadow: 1px 1px 5px 1px #e1e1e1;
+    box-shadow: 1px 1px 5px 1px #d8caba;
     padding: .5rem;
     margin-bottom: 1rem;
     border-radius: .5em;
@@ -141,7 +140,7 @@ input:hover, textarea:hover {
 button {
     border: none;
     padding: .5rem .5rem;
-    background-color: #9296ab;
+    background-color: #c45824;
     color: #fff;
     cursor: pointer;
     font-weight: bold;
@@ -150,7 +149,14 @@ button {
 }
 
 button:hover {
-    background-color: #BABFE2;
+    background-color: #c4592489;
+}
+
+h1 {
+    padding: 1rem;
+    margin: 0 1rem;
+    font-size: 1.25em;
+    color: #803300;
 }
 
 table {
@@ -161,10 +167,10 @@ table {
 }
 
 table th {
-    background-color: #9296ab;
+    background-color: #c4592493;
     color: #fff;
-    border-radius: .75em;
     border: 2px solid #fff;
+    text-transform: uppercase;
 }
         
 table th, table td {
@@ -175,18 +181,17 @@ table th, table td {
 }
 
 table td {
-    border-right: 1px solid #9296ab;
-    border-bottom: 1px solid #9296ab;
+    border-bottom: 1px solid #803300;
     animation: showLine .5s forwards;
 }
 
 table td:last-child {
     border: none;
-    border-bottom: 1px solid #9296ab;
+    border-bottom: 1px solid #803300;
 }
 
 table button {
-    margin: .25em 1em;
+    margin: .25em .5em;
 }
 
 @keyframes showLine {
